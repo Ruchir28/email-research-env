@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "task_easy_atlas_owner",
+    "difficulty": "easy",
+    "question": "Who confirmed the final Atlas launch date? Answer with the person's full name only.",
+    "max_steps": 10,
+    "canonical_answer": "Jordan Lee",
+    "answer_aliases": [
+      "jordan lee"
+    ],
+    "gold_email_ids": [
+      "atlas_02"
+    ]
+  },
+  {
+    "task_id": "task_medium_redwood_reschedule",
+    "difficulty": "medium",
+    "question": "What date was the Redwood vendor demo moved to, and who asked for the change? Answer in the format `YYYY-MM-DD | Full Name`.",
+    "max_steps": 15,
+    "canonical_answer": "2026-03-14 | Nikhil Rao",
+    "answer_aliases": [
+      "2026-03-14 | nikhil rao",
+      "2026-03-14|Nikhil Rao",
+      "2026-03-14 | Nikhil Rao."
+    ],
+    "gold_email_ids": [
+      "redwood_02",
+      "redwood_03"
+    ]
+  },
+  {
+    "task_id": "task_hard_northwind_approval",
+    "difficulty": "hard",
+    "question": "Who gave final approval for the Northwind pricing exception, and on what date? Answer in the format `Full Name | YYYY-MM-DD`.",
+    "max_steps": 20,
+    "canonical_answer": "Maya Patel | 2026-04-09",
+    "answer_aliases": [
+      "maya patel | 2026-04-09",
+      "Maya Patel|2026-04-09",
+      "Maya Patel | 2026-04-09."
+    ],
+    "gold_email_ids": [
+      "northwind_01",
+      "northwind_03"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+logs/
+*.log
+.gitignore
+.openenvignore
+HACKATHON_SUBMISSION_CHECKLIST.md

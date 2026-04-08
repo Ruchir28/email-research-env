@@ -1,0 +1,164 @@
+{
+  "emails": [
+    {
+      "email_id": "atlas_01",
+      "subject": "Atlas launch timeline draft",
+      "body": "Team, the draft Atlas launch plan still has two options: 2026-05-20 or 2026-05-22. Please do not circulate either date externally until a PM signs off.",
+      "sender": "mila.chen@acmeco.io",
+      "recipients": ["atlas-team@acmeco.io"],
+      "sent_at": "2026-01-10"
+    },
+    {
+      "email_id": "atlas_02",
+      "subject": "Final Atlas launch date",
+      "body": "Locking the customer launch date for Atlas to 2026-05-22. I have already updated the readiness checklist and comms tracker. - Jordan Lee",
+      "sender": "jordan.lee@acmeco.io",
+      "recipients": ["atlas-team@acmeco.io", "ops@acmeco.io"],
+      "sent_at": "2026-01-12"
+    },
+    {
+      "email_id": "atlas_03",
+      "subject": "Atlas FAQ copy review",
+      "body": "Now that Atlas is locked, support can prepare the FAQ update. Please keep the external wording aligned with the final launch announcement.",
+      "sender": "ana.pereira@acmeco.io",
+      "recipients": ["support@acmeco.io", "jordan.lee@acmeco.io"],
+      "sent_at": "2026-01-13"
+    },
+    {
+      "email_id": "atlas_noise_01",
+      "subject": "Atlas kickoff recap",
+      "body": "Recapping the Atlas kickoff notes from December. These dates are stale and should not be treated as launch commitments.",
+      "sender": "priya.menon@acmeco.io",
+      "recipients": ["atlas-team@acmeco.io"],
+      "sent_at": "2025-12-18"
+    },
+    {
+      "email_id": "redwood_01",
+      "subject": "Redwood vendor demo slots",
+      "body": "Current Redwood vendor demo options are 2026-03-11 and 2026-03-14. Waiting for final calendar confirmation before I send the invite.",
+      "sender": "priya.menon@acmeco.io",
+      "recipients": ["vendor-evals@acmeco.io"],
+      "sent_at": "2026-02-18"
+    },
+    {
+      "email_id": "redwood_02",
+      "subject": "Re: Redwood vendor demo slots",
+      "body": "Can we move me off the 2026-03-11 Redwood vendor demo? I need that slot for investor prep, so please shift it if 2026-03-14 is still open. - Nikhil Rao",
+      "sender": "nikhil.rao@acmeco.io",
+      "recipients": ["priya.menon@acmeco.io"],
+      "sent_at": "2026-02-19"
+    },
+    {
+      "email_id": "redwood_03",
+      "subject": "Redwood demo rescheduled",
+      "body": "I moved the Redwood vendor demo to 2026-03-14 at 15:00 IST. Calendar invite is updated and the vendor confirmed the new slot.",
+      "sender": "priya.menon@acmeco.io",
+      "recipients": ["vendor-evals@acmeco.io", "nikhil.rao@acmeco.io"],
+      "sent_at": "2026-02-20"
+    },
+    {
+      "email_id": "redwood_04",
+      "subject": "Vendor confirmation for Redwood demo",
+      "body": "Confirmed. We will meet on 2026-03-14 for the Redwood walkthrough.",
+      "sender": "cora@latticevendor.com",
+      "recipients": ["priya.menon@acmeco.io"],
+      "sent_at": "2026-02-20"
+    },
+    {
+      "email_id": "redwood_noise_01",
+      "subject": "Redwood budget review moved",
+      "body": "The Redwood budget review is now on 2026-03-11. This is unrelated to the vendor demo.",
+      "sender": "finance@acmeco.io",
+      "recipients": ["priya.menon@acmeco.io"],
+      "sent_at": "2026-02-21"
+    },
+    {
+      "email_id": "redwood_noise_02",
+      "subject": "Re: Redwood shortlist",
+      "body": "Nikhil still prefers Lattice over Orbit, but we can decide after the demo.",
+      "sender": "priya.menon@acmeco.io",
+      "recipients": ["vendor-evals@acmeco.io"],
+      "sent_at": "2026-02-17"
+    },
+    {
+      "email_id": "northwind_01",
+      "subject": "Northwind pricing exception notes",
+      "body": "Finance is okay with the Northwind renewal if we use the Orion exception memo. Maya Patel still has to sign the final approval before sales can send the revised order form.",
+      "sender": "sarah.kim@acmeco.io",
+      "recipients": ["arun.das@acmeco.io", "revenue-ops@acmeco.io"],
+      "sent_at": "2026-03-30"
+    },
+    {
+      "email_id": "northwind_02",
+      "subject": "Re: Northwind pricing exception notes",
+      "body": "Understood. I will pull the Orion paperwork together once Maya is back in office.",
+      "sender": "arun.das@acmeco.io",
+      "recipients": ["sarah.kim@acmeco.io"],
+      "sent_at": "2026-03-31"
+    },
+    {
+      "email_id": "northwind_03",
+      "subject": "Signed Orion exception memo",
+      "body": "Approved the Orion exception for the Northwind renewal on 2026-04-09. Please file this under Q2 commercial approvals. - Maya Patel",
+      "sender": "maya.patel@acmeco.io",
+      "recipients": ["arun.das@acmeco.io", "sarah.kim@acmeco.io"],
+      "sent_at": "2026-04-09"
+    },
+    {
+      "email_id": "northwind_04",
+      "subject": "Northwind contract redlines",
+      "body": "Legal turned around the latest Northwind redlines. This thread is only about indemnity language, not commercial pricing.",
+      "sender": "legal@acmeco.io",
+      "recipients": ["sarah.kim@acmeco.io"],
+      "sent_at": "2026-04-02"
+    },
+    {
+      "email_id": "northwind_noise_01",
+      "subject": "Signed Orion budget reallocation",
+      "body": "Approved the Orion budget reallocation for the analytics team on 2026-04-09.",
+      "sender": "maya.patel@acmeco.io",
+      "recipients": ["finance@acmeco.io"],
+      "sent_at": "2026-04-09"
+    },
+    {
+      "email_id": "northwind_noise_02",
+      "subject": "Northwind QBR planning",
+      "body": "Let's finalize the Northwind QBR deck this week. No pricing changes are in scope for this thread.",
+      "sender": "account-mgmt@acmeco.io",
+      "recipients": ["sarah.kim@acmeco.io"],
+      "sent_at": "2026-03-28"
+    },
+    {
+      "email_id": "ops_noise_01",
+      "subject": "Travel reimbursement approval",
+      "body": "Maya approved the travel reimbursement batch for field marketing on 2026-04-09.",
+      "sender": "finance@acmeco.io",
+      "recipients": ["ops@acmeco.io"],
+      "sent_at": "2026-04-09"
+    },
+    {
+      "email_id": "ops_noise_02",
+      "subject": "Vendor discount exception playbook",
+      "body": "The discount exception playbook now lives in the revenue wiki. Use it for standard renewals, not Orion exceptions.",
+      "sender": "revops@acmeco.io",
+      "recipients": ["sales@acmeco.io"],
+      "sent_at": "2026-03-26"
+    },
+    {
+      "email_id": "hiring_noise_01",
+      "subject": "Interview loop for Jordan candidate",
+      "body": "Scheduling the Jordan candidate interview loop next Tuesday. This is unrelated to Jordan Lee from product.",
+      "sender": "talent@acmeco.io",
+      "recipients": ["maya.patel@acmeco.io"],
+      "sent_at": "2026-01-14"
+    },
+    {
+      "email_id": "support_noise_01",
+      "subject": "Customer launch checklist question",
+      "body": "A customer asked whether launch checklist items can be shared before the date is public. Please point them to the comms owner.",
+      "sender": "support@acmeco.io",
+      "recipients": ["ana.pereira@acmeco.io"],
+      "sent_at": "2026-01-15"
+    }
+  ]
+}

@@ -152,7 +152,7 @@ def search_emails(
                 JOIN emails e ON e.rowid = emails_fts.rowid
                 WHERE emails_fts MATCH ?
                 {'AND ' + ' AND '.join(filters) if filters else ''}
-                ORDER BY bm25(emails_fts), e.sent_at DESC
+                ORDER BY bm25(emails_fts), e.sent_at DESC, e.email_id ASC
                 LIMIT ?
             """
             rows = cursor.execute(sql, [fts_query, *params, top_k]).fetchall()

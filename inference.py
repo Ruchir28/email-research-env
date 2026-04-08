@@ -24,12 +24,13 @@ from my_env import EmailAction, MyEnv
 
 TASKS = json.loads((ROOT_DIR / "data" / "tasks.json").read_text())
 BENCHMARK = "email-research-env"
-IMAGE_NAME = os.environ.get("LOCAL_IMAGE_NAME", "").strip() or "email-research-env:latest"
+IMAGE_NAME = os.environ.get("LOCAL_IMAGE_NAME", "").strip()
 ENV_URL = os.environ.get("ENV_URL", "")
 API_BASE_URL = os.environ.get("API_BASE_URL", "https://router.huggingface.co/v1").strip()
-MODEL_NAME = os.environ.get("MODEL_NAME", "google/gemma-4-31B-it")
+MODEL_NAME = os.environ.get("MODEL_NAME", "z-ai/glm-5").strip()
 INFERENCE_LOG_PATH = os.environ.get("INFERENCE_LOG_PATH", "")
 API_KEY = os.environ.get("HF_TOKEN", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip()
+SEED = int(os.environ.get("SEED", "42"))
 MAX_STEPS_BUFFER = 2
 MODEL_MAX_RETRIES = 3
 TEMPERATURE = 0.0
@@ -60,7 +61,7 @@ def log_start(task: str, env: str, model: str) -> None:
 
 def log_step(step: int, action: str, reward: float, done: bool, error: str | None) -> None:
     action_clean = action.replace("\n", " ").replace("\r", "")[:200]
-    error_value = error if error else "null"
+    error_value = (error or "null").replace("\n", " ").replace("\r", "")[:200]
     emit_log_line(
         f"[STEP] step={step} action={action_clean} reward={reward:.2f} "
         f"done={str(done).lower()} error={error_value}"
@@ -80,6 +81,8 @@ async def create_env() -> MyEnv:
         env = MyEnv(base_url=ENV_URL)
         await env.connect()
         return env
+    if not IMAGE_NAME:
+        raise RuntimeError("missing_local_image_name")
     return await MyEnv.from_docker_image(IMAGE_NAME)
 
 
@@ -268,6 +271,7 @@ def get_model_action(
                 ],
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,
+                seed=SEED,
             )
             text = response.choices[0].message.content or ""
             last_error = None
@@ -306,9 +310,10 @@ async def run_task(llm_client: OpenAI, task: dict[str, Any]) -> dict[str, Any]:
     history: list[str] = []
     final_score = 0.0
     success = False
+    env: MyEnv | None = None
     log_start(task=task["task_id"], env=BENCHMARK, model=MODEL_NAME)
-    env = await create_env()
     try:
+        env = await create_env()
         result = await env.reset(task_id=task["task_id"])
         observation = result.observation
         max_steps = task["max_steps"] + MAX_STEPS_BUFFER
@@ -345,11 +350,16 @@ async def run_task(llm_client: OpenAI, task: dict[str, Any]) -> dict[str, Any]:
                 break
         else:
             final_score = rewards[-1] if rewards else 0.0
+    except Exception as exc:
+        emit_debug_line(f"[DEBUG] task runtime failed ({task['task_id']}): {exc}")
+        final_score = 0.0
+        success = False
     finally:
-        try:
-            await env.close()
-        except Exception as exc:
-            emit_debug_line(f"[DEBUG] env.close() error: {exc}")
+        if env is not None:
+            try:
+                await env.close()
+            except Exception as exc:
+                emit_debug_line(f"[DEBUG] env.close() error: {exc}")
         log_end(success=success, steps=len(rewards), score=final_score, rewards=rewards)
 
     return {
@@ -370,6 +380,9 @@ async def main() -> int:
         return 1
     if not API_KEY:
         print("HF_TOKEN must be set", file=sys.stderr)
+        return 1
+    if not ENV_URL and not IMAGE_NAME:
+        print("LOCAL_IMAGE_NAME must be set when ENV_URL is not provided", file=sys.stderr)
         return 1
     if INFERENCE_LOG_PATH:
         log_path = Path(INFERENCE_LOG_PATH)
